@@ -6,32 +6,30 @@ include <stdio.h>
 *@size:size parameter of triangle
 *Return: returns nothing
 */
-
 void print_triangle(int size)
 {
-	int inc1, inc2;
+	int x, y;
 
 	if (size > 0)
 	{
-		for (inc1 = 1; inc1 <= size; inc1++)
+		for (x = 1; x <= size; x++)
 		{
-			for ((inc2 = size - inc1); inc2 > 0; inc2--)
+			for (y = 1; y <= size; y++)
 			{
-				putchar(' ');
+				if (y <= size - x)
+				{
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar('#');
+				}
 			}
-
-			for (inc2 = 0; inc2 < inc1; inc2++)
-			{
-				putchar('#');
-			}
-
-			if (inc1 == size)
-			{
-				continue;
-			}
-
-			putchar('\n');
+			_putchar('\n');
 		}
 	}
-	putchar('\n');
+	else
+	{
+		_putchar('\n');
+	}
 }
